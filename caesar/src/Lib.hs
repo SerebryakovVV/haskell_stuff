@@ -1,8 +1,9 @@
--- module Lib
---   ( 
---   ) where
+module Lib
+  ( lowerAlphabet 
+  ) where
 
-module Lib where
+
+-- module Lib where
 -- someFunc :: IO ()
 -- someFunc = putStrLn "someFunc"
 
