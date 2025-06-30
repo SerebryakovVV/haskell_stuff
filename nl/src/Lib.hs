@@ -1,8 +1,24 @@
 module Lib
-    ( nl
+    ( nl, numberAllLines, parseArguments, fromMb
     ) where
 
 import System.Environment
+
+
+
+
+type NumberedLine = (Maybe Int, String)
+type NumberedLines = [NumberedLine]
+
+
+
+numberAllLines :: [String] -> NumberedLines
+numberAllLines lines = 
+    let go :: Int -> [String] -> NumberedLines
+        go _ [] = []
+        go counter (x : xs) = (Just counter, x) : go (counter + 1) xs   
+     in go 1 lines 
+
 
 
 nl :: IO ()
@@ -23,4 +39,7 @@ fromMb _ (Just v) = v
 fromMb v Nothing  = v
 
 
-maybe
+
+
+
+
